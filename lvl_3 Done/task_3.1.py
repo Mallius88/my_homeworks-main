@@ -26,28 +26,43 @@
 #   - проявите фантазию :)
 
 class Matrix:
-    def __init__(self, rows, cols):
-        self.rows = rows
-        self.cols = cols
-        self.table = [[None for _ in range(self.cols)] for _ in range(self.rows)]
+    def __init__(self, x, y, val=None):
+        self.__num_cols = x
+        self.__num_rows = y
+        self.__table = [[val for _ in range(x)] for _ in range(y)]
 
-    def set_value(self, row, col, val):
-        self.table[row][col] = val
-
-    def update_value(self, row, col, val):
-        if row >= self.rows or col >= self.cols:
+    def set_value(self, x, y, val):
+        if x >= self.__num_cols or y >= self.__num_rows:
             raise ValueError("Index out of range")
-        self.table[row][col] = val
+        self.__table[y][x] = val
+
+    def replace_value(self, x, y, val):
+        if x >= self.__num_cols or y >= self.__num_rows:
+            raise ValueError("Index out of range")
+        if self.__table[y][x] is None:
+            raise ValueError("Can't replace None")
+        self.__table[y][x] = val
+
+    def get_value(self, x, y):
+        return self.__table[y][x]
 
     def num_rows(self):
-        return self.rows
+        return self.__num_rows
 
     def num_cols(self):
-        return self.cols
+        return self.__num_cols
+
+    def print(self):
+        for y in range(self.__num_rows):
+            print('\t'.join((str(r) if r is not None else 'N') for r in self.__table[y]))
+        print()
 
 
 matrix = Matrix(3, 4)
+matrix.print()
+
 matrix.set_value(0, 2, 5)
-matrix.update_value(1, 1, 10)
-print(matrix.num_rows())
-print(matrix.num_cols())
+matrix.print()
+
+matrix.set_value(1, 1, 10)
+matrix.print()
