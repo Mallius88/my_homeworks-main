@@ -49,7 +49,5 @@ for name in titles.items():
             answer[name[0]][0] += i['quantity']
             answer[name[0]][1] += new_cost
 
-    temp_name = []
-
 for text in answer.items():
     print(f'"{text[0]} - {text[1][0]} шт, стоимость {text[1][1]} руб"')
