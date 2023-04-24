@@ -54,3 +54,9 @@ def remove_word_with_one_em(s):
         else:
             answer.append(i)
     print(*answer)
+
+# Последний можно покороче
+def remove_word_with_one_em(s):
+    return ' '.join([w for w in s.split(' ') if w.count('!')!=1])
+
+print(remove_word_with_one_em("Hi! Hi!! Hi!"))
