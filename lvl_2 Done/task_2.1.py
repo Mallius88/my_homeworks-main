@@ -11,11 +11,19 @@
 # функции sorted, max и min использовать нельзя!
 
 def minimum(arr):
-    return min(arr)
+    temp = 0
+    for i in arr:
+        if i < temp:
+            temp = i
+    return temp
 
 
 def maximum(arr):
-    return max(arr)
+    temp = 0
+    for i in arr:
+        if i > temp:
+            temp = i
+    return temp
 
 
 print(minimum([4, 6, 2, 1, 9, 63, -134, 566]))
