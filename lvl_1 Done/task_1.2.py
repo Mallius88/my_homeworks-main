@@ -33,7 +33,20 @@ first_answer_list = str(datetime.timedelta(seconds = answer_sec))
 print(f'Три песни звучат {first_answer_list}')
 
 
+# У вас здесь немного некорректно формируется время при выводе.
+# вот мой вариант решения
 
+# Пункт C(B)
+
+from random import sample
+from datetime import timedelta
+from math import modf
+
+time = 0
+for song in sample(tuple(my_favorite_songs_dict), 3):
+    time += my_favorite_songs_dict[song]
+
+print(f'Пункт C(B): Три песни звучат {round(time, 2)}')
 
 # Пункт B. 
 # Есть словарь песен 
