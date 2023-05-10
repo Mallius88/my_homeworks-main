@@ -34,15 +34,13 @@ with sql.connect('teatchers.db') as con:
         School_Id  INTEGER PRIMARY KEY
         )""")
 
+# Добавление записей:
 
     # cur.execute(""" INSERT INTO Students VALUES(201, 'Иван', 1)""")
     # cur.execute(""" INSERT INTO Students VALUES(202, 'Петр', 2)""")
     # cur.execute(""" INSERT INTO Students VALUES(203, 'Анастасия', 3)""")
     # cur.execute(""" INSERT INTO Students VALUES(204, 'Игорь', 4)""")
 
-    # cur.execute("""SELECT * FROM Students""")
-    # result = cur.fetchall()
-    # print(result)
 
     def find_students(value):
         cur.execute(f"""

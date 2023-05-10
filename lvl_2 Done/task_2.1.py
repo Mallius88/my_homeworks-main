@@ -11,7 +11,7 @@
 # функции sorted, max и min использовать нельзя!
 
 def minimum(arr):
-    temp = 0
+    temp = arr[0]
     for i in arr:
         if i < temp:
             temp = i
@@ -19,7 +19,7 @@ def minimum(arr):
 
 
 def maximum(arr):
-    temp = 0
+    temp = arr[0]
     for i in arr:
         if i > temp:
             temp = i
