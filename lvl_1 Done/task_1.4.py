@@ -51,3 +51,5 @@ for name in titles.items():
 
 for text in answer.items():
     print(f'"{text[0]} - {text[1][0]} шт, стоимость {text[1][1]} руб"')
+    
+# Выполнено
